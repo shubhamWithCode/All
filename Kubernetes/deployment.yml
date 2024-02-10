@@ -12,23 +12,14 @@ spec:
     metadata:
       labels:
         app: nginx-app
-    spec:
-      containers:
+    spec:   
+      containers: # we can also have secrets here for private repo "imagePullSecrets"
       - name: nginx-app
         image: imranvisualpath/freshtomapp:Vi7
         ports:
         - containerPort: 8080
+        env:
+        - name: # all variables/ configurations/ properties from developers
+          value: "Fewfgr"
 
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: nginx-service
-spec:
-  ports:
-  - port: 8080
-    targetPort: 8080
-    protocol: "TCP"
-  selector:
-    app: nginx-deploy
-  type: LoadBalancer
+

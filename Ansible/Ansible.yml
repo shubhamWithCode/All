@@ -1,0 +1,37 @@
+---
+- hosts: jenkins-slave
+  become: true
+  tasks:
+  - name: update ubuntu repo and cache
+    apt:
+      update_cache: yes
+      cache_valid_time: 3600
+
+# install java
+  - name: install java
+    apt:
+      name: openjdk-11-jre
+      state: present
+
+# install maven
+    - name: download maven pkgs
+    get_url:
+      url: https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz
+      dest: /opt
+
+  - name: extract mvn pkgs
+    unarchive:
+      src: /opt/apache-maven-3.9.6-bin.tar.gz
+      dest: /opt
+      remote_src: yes   
+
+# install Docker and start service
+  - name: install docker
+    apt:
+      name: docker.io
+      state: present
+
+  - name: start docker services
+    service:
+      name: docker
+      state: started

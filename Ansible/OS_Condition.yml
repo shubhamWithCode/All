@@ -1,0 +1,13 @@
+---
+- hosts: all
+  beocme: yes
+  tasks:
+    - name: install apache on UBUNTU
+      apt: name= apache2 state: present
+      when: ansible_os_family == "Debian"
+      ignore_errors: True
+
+- name: Install httpd on RedHat
+  yum: name=httpd state=present
+  when: ansible_os_family == "Redhat"
+  ignore_errors: True

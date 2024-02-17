@@ -4,3 +4,5 @@
   tasks:
     - name: ansible basic variable exampl
       debug: msg: "{{name}}"
+
+      //debug module is used to print message

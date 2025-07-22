@@ -1,0 +1,40 @@
+Troubleshooting email issues involves a structured approach based on where the problem lies
+- sending, receiving, authentication, spam filtering, or client-side configuration. Here's a practical guide you can follow:
+
+✅ 1. Identify the Type of Issue
+Ask or observe:
+Is the user unable to send, receive, or both?
+Is it happening to all users or just one?
+Is there any bounce-back message or error code?
+
+📤 2. Troubleshooting Sending Issues (SMTP)
+🔍 Check 1: SMTP Settings in Client (e.g., Outlook)
+Correct SMTP server (e.g., smtp.example.com)
+Port: 587 (STARTTLS) or 465 (SSL)
+Correct email and password
+Use of SSL/TLS enabled
+🔍 Check 2: Firewall or ISP Blocking Port 25
+Use telnet smtp.example.com 25 or openssl s_client -connect smtp.example.com:465
+
+
+commands - mailq , postqueue -p , exim -bp
+
+🔍 Check 5: DNS Records (SPF, DKIM, DMARC)
+Use online tools (e.g., mxtoolbox.com) to check
+Missing or incorrect records can cause email delivery to spam
+
+📥 3. Troubleshooting Receiving Issues (IMAP/POP)
+🔍 Check 1: IMAP/POP Configuration
+IMAP port: 993 (SSL) / 143 (STARTTLS)
+POP port: 995 (SSL) / 110 (STARTTLS)
+🔍 Check 2: Disk Quota or Mailbox Full
+Check /var/mail/username or webmail interface
+
+Restart outlook or mailapp
+
+🌍 5. Check Domain/DNS Issues
+Use dig, nslookup or online tools to verify:
+MX records point to correct mail server
+
+test mail
+echo "Test body" | mail -s "Test Email" user@example.com

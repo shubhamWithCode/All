@@ -1,0 +1,39 @@
+✅ 1. SMTP (Simple Mail Transfer Protocol)
+Purpose: Sending emails from client to server and between servers
+Port:
+25 (default, often blocked by ISPs)
+587 (with STARTTLS encryption)
+465 (with SSL/TLS encryption)
+Direction: Outgoing mail
+Used by: Mail clients to send emails (e.g., Outlook → mail server)
+
+✅ 2. IMAP (Internet Message Access Protocol)
+Purpose: Accessing emails stored on a remote mail server
+Port:
+143 (unencrypted)
+993 (with SSL/TLS encryption)
+Direction: Incoming mail
+Behavior:
+Keeps emails on the server
+Syncs across multiple devices
+Ideal for: Users who access mail from multiple devices
+
+✅ 3. POP3 (Post Office Protocol version 3)
+Purpose: Downloading emails from the server to local device
+Port:
+110 (unencrypted)
+995 (with SSL/TLS encryption)
+Direction: Incoming mail
+Behavior:
+Downloads and often deletes emails from server
+Ideal for: Single-device access or backup scenarios
+
+🧰 Email Clients (e.g., Microsoft Outlook)
+Graphical tools used to send, receive, and manage email
+Support for configuring accounts using:
+SMTP (sending)
+IMAP or POP3 (receiving)
+Commonly used in:
+Business environments (Outlook + Exchange)
+Personal email via IMAP/SMTP (e.g., Gmail, custom domains)
+

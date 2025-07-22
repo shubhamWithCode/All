@@ -1,0 +1,27 @@
+WHM (Web Host Manager) and cPanel are two interconnected tools widely used for web hosting management, 
+especially in shared or reseller hosting environments. Here's a breakdown of what each does:
+🔧 cPanel (Control Panel):
+User-level web hosting control panel
+Designed for website owners or end users
+Provides a graphical interface to manage:
+Domains and subdomains
+Email accounts and forwarders
+Files (using File Manager or FTP)
+Databases (MySQL, PostgreSQL)
+SSL certificates
+Backups
+Software installations (e.g., WordPress via Softaculous)
+Easy to use even for non-technical users
+-------------------------------------------------------------------------------------
+🛠️ WHM (Web Host Manager):
+Admin-level control panel
+Used by resellers, system administrators, or web hosting providers
+Used to manage:
+Multiple cPanel accounts
+Server-wide settings
+Hosting packages (limits for cPanel accounts)
+DNS zone files
+Service monitoring (Apache, MySQL, etc.)
+Security settings (firewalls, brute force protection)
+SSL installations on multiple domains
+Software updates

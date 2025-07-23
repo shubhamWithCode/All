@@ -1,0 +1,35 @@
+To create, delete, and configure mail accounts, 
+  the steps will depend on what mail server or 
+control panel you are using — e.g., cPanel/WHM, \
+Postfix + Dovecot, Microsoft Exchange, or others.
+
+  ✅ Using cPanel (common in shared hosting environments)
+1. Create a Mail Account
+Login to cPanel.
+Go to Email Accounts.
+Click on Create.
+Fill in:
+Username (e.g., support@yourdomain.com)
+Password
+Mailbox Quota
+Click Create.
+2. Delete a Mail Account
+Go to Email Accounts.
+Find the email you want to delete.
+Click the Delete button next to it.
+3. Configure Mail Account (in Outlook, Thunderbird, etc.)
+Find Mail Client Configuration in cPanel → Email Accounts → Connect Devices.
+Use:
+Incoming (IMAP/POP3):
+Server: mail.yourdomain.com
+Port: IMAP (993), POP3 (995)
+Outgoing (SMTP):
+Server: mail.yourdomain.com
+Port: SMTP (465 or 587)
+SSL: Enabled
+Authentication: Yes (use full email address and password)
+
+1. Create Mail User
+Assuming mail domain is example.com:
+sudo useradd -m support@example.com
+sudo passwd support@example.com

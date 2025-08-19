@@ -1,0 +1,20 @@
+roles/
+  myrole/
+    defaults/
+      main.yml        # Default variables (lowest priority)
+    vars/
+      main.yml        # Variables (higher priority than defaults)
+    files/
+      file1.conf      # Static files copied to target hosts
+    templates/
+      template.j2     # Jinja2 templates for configuration files
+    tasks/
+      main.yml        # List of tasks executed by this role
+    handlers/
+      main.yml        # Handlers (notify/restart services, etc.)
+    meta/
+      main.yml        # Role metadata (dependencies, author, license, etc.)
+    tests/
+      inventory       # Test inventory
+      test.yml        # Test playbook for role validation
+    README.md         # Documentation for role

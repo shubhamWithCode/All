@@ -18,3 +18,14 @@ roles/
       inventory       # Test inventory
       test.yml        # Test playbook for role validation
     README.md         # Documentation for role
+
+
+- name; install nginc
+  apt; name=git state=present
+
+---
+hosts; server
+become; true
+roles;
+      - git
+      - nginx

@@ -1,10 +1,17 @@
-FROM php:8.2-cli-alpine
-
+FROM php:8.2-cli AS builder
 WORKDIR /app
 
-COPY ./src /app
+# Copy app code and install dependencies
+COPY . .
+RUN composer install --no-dev --optimize-autoloader
 
-EXPOSE 8080
+# Stage 2: Final image
+FROM php:8.2-apache
+WORKDIR /var/www/html
 
-# Start PHP's built-in web server
-CMD ["php", "-S", "0.0.0.0:8080", "index.php"]
+# Copy built app from builder stage
+COPY --from=builder /app /var/www/html
+
+EXPOSE 80
+CMD ["apache2-foreground"]
+
